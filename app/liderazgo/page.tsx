@@ -1,6 +1,6 @@
 import Nav from "../../components/Nav";
 import SocialBar from "../../components/SocialBar";
-import { Instagram, Mail } from "lucide-react";
+import { Instagram, Mail, Facebook } from "lucide-react"; // ✅ Agregamos Facebook
 
 export default function LiderazgoPage() {
   const lideres = [
@@ -8,15 +8,17 @@ export default function LiderazgoPage() {
       nombre: "Pastor Jecxon Pérez",
       cargo: "Pastor Principal",
       bio: "Llamado a levantar una generación con un ADN diferente, apasionado por la enseñanza bíblica y la transformación de la ciudad.",
-      imagen: "/pastor.jpg", // Asegúrate de que la foto esté en public/pastor.jpg
-      ig: "https://www.instagram.com/profetajecxonperez"
+      imagen: "/pastor.jpg", // ⚠️ Recuerda guardar la foto en la carpeta public
+      ig: "https://www.instagram.com/profetajecxon/",
+      fb: "https://www.facebook.com/jeixonjose.perezybarra"
     },
     {
-      nombre: "Pastora [Nombre]", // Aquí puedes poner el nombre de su esposa
+      nombre: "Pastora Andrea Borjas",
       cargo: "Pastora Principal",
       bio: "Dedicada a fortalecer el corazón de las familias y guiar a la congregación hacia una adoración genuina y profunda.",
-      imagen: "/pastora.jpg", // Asegúrate de que la foto esté en public/pastora.jpg
-      ig: "https://www.instagram.com/ciudadavivamiento"
+      imagen: "/pastora.jpg", // ⚠️ Recuerda guardar la foto en la carpeta public
+      ig: "https://www.instagram.com/borjasandrea/",
+      fb: "https://www.facebook.com/andreaceleste.borjastorrealba.5"
     }
   ];
 
@@ -40,6 +42,7 @@ export default function LiderazgoPage() {
             {lideres.map((lider, index) => (
               <div key={index} className="group">
                 <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-white/10 mb-8 bg-white/5 shadow-2xl transition-all duration-500 group-hover:border-[#FFE800]/30">
+                   {/* Imagen con fallback por si no la han subido aún */}
                    <img 
                     src={lider.imagen} 
                     alt={lider.nombre}
@@ -58,9 +61,21 @@ export default function LiderazgoPage() {
                   </p>
                   
                   <div className="flex justify-center md:justify-start gap-3 pt-4">
-                    <a href={lider.ig} target="_blank" className="p-3 rounded-xl bg-white/5 text-white hover:bg-[#FFE800] hover:text-black transition-all duration-300">
-                      <Instagram size={20} />
-                    </a>
+                    {/* Botón Facebook */}
+                    {lider.fb && (
+                      <a href={lider.fb} target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-white/5 text-white hover:bg-[#1877F2] hover:text-white transition-all duration-300">
+                        <Facebook size={20} />
+                      </a>
+                    )}
+                    
+                    {/* Botón Instagram */}
+                    {lider.ig && (
+                      <a href={lider.ig} target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-white/5 text-white hover:bg-gradient-to-tr hover:from-[#fd5949] hover:to-[#d6249f] transition-all duration-300">
+                        <Instagram size={20} />
+                      </a>
+                    )}
+
+                    {/* Botón Correo */}
                     <a href="mailto:info@ciudadavivamiento.com" className="p-3 rounded-xl bg-white/5 text-white hover:bg-[#FFE800] hover:text-black transition-all duration-300">
                       <Mail size={20} />
                     </a>
