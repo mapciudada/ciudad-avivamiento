@@ -5,12 +5,14 @@ import { testimonios } from "../data/testimonios";
 
 export default function TestimonialsSection() {
   return (
-    // 👇 AQUÍ AGREGUÉ EL ID
-    <section id="testimonios" className="py-24 bg-[#050505] relative overflow-hidden">
+    // CAMBIO CLAVE: Cambié 'py-24' por 'pt-0 pb-24'. 
+    // 'pt-0' elimina el espacio de arriba para que se pegue al Hero.
+    <section id="testimonios" className="pt-0 pb-24 bg-[#050505] relative overflow-hidden">
+      
       {/* Brillo de fondo */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#FFE800]/5 rounded-full blur-[120px] -z-10" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mt-12"> {/* Agregué mt-12 para dar un respiro suave interno */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             Vidas <span className="text-[#FFE800]">Transformadas</span>

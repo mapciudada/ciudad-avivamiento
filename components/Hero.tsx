@@ -1,13 +1,15 @@
 "use client";
 import Link from "next/link"; 
 import { motion } from "framer-motion";
-import { ArrowRight, Play, MapPin, Sparkles } from "lucide-react";
+import { Play, MapPin } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative h-[95vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-[#050505]">
+    // CAMBIO CLAVE: Quitamos 'h-[...]' y usamos 'pt-48 pb-12'.
+    // Esto hace que la sección termine justo después de los botones.
+    <section id="inicio" className="relative w-full flex flex-col items-center justify-center overflow-hidden bg-[#050505] pt-48 pb-12 md:pt-60 md:pb-20">
       
-      {/* --- FONDO CINEMATOGRÁFICO --- */}
+      {/* --- FONDO --- */}
       <div className="absolute inset-0 z-0">
         <motion.div 
           initial={{ scale: 1.1, opacity: 0 }}
@@ -22,13 +24,14 @@ export default function Hero() {
           />
         </motion.div>
         
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
+        {/* Degradado para conectar suavemente con la siguiente sección */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent" />
       </div>
 
       {/* --- CONTENIDO --- */}
       <div className="container relative z-10 text-center px-4">
         
-        {/* Badge "Bienvenidos" */}
+        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,7 +44,7 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Título Principal - TAMAÑO RESTAURADO */}
+        {/* Título Principal */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,14 +57,13 @@ export default function Hero() {
           </span>{" "}
           <span className="text-[#FFE800] relative inline-block">
             Avivamiento
-            {/* Subrayado decorativo */}
             <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#FFE800] opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
               <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
             </svg>
           </span>
         </motion.h1>
 
-        {/* Subtítulo Script */}
+        {/* Subtítulo */}
         <motion.div
           initial={{ opacity: 0, rotate: -3, scale: 0.9 }}
           animate={{ opacity: 1, rotate: -3, scale: 1 }}
@@ -73,7 +75,7 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* Botones de Acción */}
+        {/* Botones */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -97,16 +99,6 @@ export default function Hero() {
           </Link>
         </motion.div>
       </div>
-
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30"
-      >
-        <ArrowRight size={24} className="rotate-90 animate-bounce" />
-      </motion.div>
-
     </section>
   );
 }
