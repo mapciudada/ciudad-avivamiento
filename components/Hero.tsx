@@ -1,49 +1,47 @@
 "use client";
 import Link from "next/link"; 
 import { motion } from "framer-motion";
-import { ArrowRight, Play, MapPin } from "lucide-react";
+import { ArrowRight, Play, MapPin, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative h-[95vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-black">
+    <section id="inicio" className="relative h-[95vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-[#050505]">
       
       {/* --- FONDO CINEMATOGRÁFICO --- */}
       <div className="absolute inset-0 z-0">
         <motion.div 
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 10, repeat: Infinity, repeatType: "mirror" }}
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.6 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
           className="relative w-full h-full"
         >
           <img
             src="/hero.jpg" 
             alt="Adoración en Ciudad Avivamiento"
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover"
           />
         </motion.div>
         
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/80 via-transparent to-[#050505]/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/40 to-transparent" />
       </div>
 
       {/* --- CONTENIDO --- */}
       <div className="container relative z-10 text-center px-4">
         
-        {/* Badge "Bienvenidos" Animado */}
+        {/* Badge "Bienvenidos" */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6"
         >
-          {/* Color cambiado a AMARILLO CONEXIÓN */}
           <span className="w-2 h-2 rounded-full bg-[#FFE800] animate-pulse shadow-[0_0_10px_#FFE800]"></span>
-          <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-white/80 uppercase">
+          <span className="text-xs font-bold tracking-[0.2em] text-white/80 uppercase">
             Domingos 9:00 AM
           </span>
         </motion.div>
 
-        {/* Título Principal */}
+        {/* Título Principal - TAMAÑO RESTAURADO */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,7 +52,6 @@ export default function Hero() {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50">
             Ciudad
           </span>{" "}
-          {/* Color cambiado a AMARILLO CONEXIÓN */}
           <span className="text-[#FFE800] relative inline-block">
             Avivamiento
             {/* Subrayado decorativo */}
@@ -83,7 +80,6 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          {/* Botón Primario -> AMARILLO CON SOMBRA DORADA */}
           <Link 
             href="/nosotros" 
             className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#FFE800] text-black font-bold text-lg hover:shadow-[0_0_30px_rgba(255,232,0,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
@@ -102,7 +98,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Down Indicator (FLECHA SIN TEXTO) */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
