@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Poppins, Pacifico } from "next/font/google";
-import Preloader from "../components/Preloader"; // 👈 1. IMPORTAMOS EL PRELOADER
+import Preloader from "../components/Preloader"; 
 
 // Configuración de fuentes
 const poppins = Poppins({ 
@@ -46,11 +46,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ${pacifico.variable}
           bg-[#050505] text-white 
           antialiased 
-          selection:bg-[#13C2C2] selection:text-black
+          /* CORREGIDO: Ahora el texto seleccionado es AMARILLO */
+          selection:bg-[#FFE800] selection:text-black
           overflow-x-hidden
         `}
       >
-        {/* 👈 2. AQUÍ COLOCAMOS LA PANTALLA DE CARGA PARA QUE SALGA PRIMERO */}
+        {/* PANTALLA DE CARGA */}
         <Preloader />
 
         {children}

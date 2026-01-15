@@ -10,7 +10,8 @@ export default function DonarPage() {
         {/* Encabezado Espiritual */}
         <div className="container mx-auto px-4 mb-12 text-center">
           <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4">
-            Generosidad y <span className="text-[#13C2C2]">Bendición</span>
+            {/* COLOR ACTUALIZADO: Amarillo */}
+            Generosidad y <span className="text-[#FFE800]">Bendición</span>
           </h1>
           <p className="text-white/50 max-w-2xl mx-auto italic">
             "Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre." 
@@ -38,7 +39,8 @@ export default function DonarPage() {
               href="https://www.motostorellc.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-white hover:text-[#13C2C2] transition-all duration-300 font-black underline decoration-white/20 underline-offset-4"
+              // COLOR ACTUALIZADO: Hover amarillo y subrayado amarillo
+              className="text-white hover:text-[#FFE800] transition-all duration-300 font-black underline decoration-[#FFE800] underline-offset-4"
             >
               Moto Store LLC
             </a>

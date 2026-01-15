@@ -7,7 +7,8 @@ export default function Page() {
   return (
     <>
       <Nav />
-      <main className="bg-[#050505] text-white selection:bg-[#13C2C2] selection:text-black">
+      {/* CORREGIDO: selection:bg-[#FFE800] para selección de texto amarilla */}
+      <main className="bg-[#050505] text-white selection:bg-[#FFE800] selection:text-black">
         
         {/* 1. PORTADA (HERO) */}
         <Hero />
@@ -34,7 +35,8 @@ export default function Page() {
               href="https://www.motostorellc.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-white hover:text-[#13C2C2] transition-all duration-300 font-black underline decoration-white/20 underline-offset-4"
+              // CORREGIDO: Hover amarillo y subrayado amarillo
+              className="text-white hover:text-[#FFE800] transition-all duration-300 font-black underline decoration-[#FFE800] underline-offset-4"
             >
               Moto Store LLC
             </a>

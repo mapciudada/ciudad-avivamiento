@@ -14,12 +14,11 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ AQUÍ AGREGUÉ "Oraciones"
   const links = [
     { name: "Inicio", href: "/" },
     { name: "Nosotros", href: "/nosotros" },
     { name: "Eventos", href: "/eventos" },
-    { name: "Oraciones", href: "/oraciones" }, // 👈 Nuevo enlace
+    { name: "Oraciones", href: "/oraciones" },
     { name: "Multimedia", href: "/multimedia" },
   ];
 
@@ -32,13 +31,13 @@ export default function Nav() {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           
-          {/* LOGO */}
+          {/* LOGO - AHORA CON HOVER AMARILLO */}
           <Link href="/" className="relative z-50 flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-white/10 to-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md group-hover:bg-[#13C2C2]/20 group-hover:scale-105 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.2)]">
-              <span className="text-sm font-black text-white group-hover:text-[#13C2C2] transition-colors tracking-tighter">CA</span>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-white/10 to-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md group-hover:bg-[#FFE800]/20 group-hover:scale-105 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.2)]">
+              <span className="text-sm font-black text-white group-hover:text-[#FFE800] transition-colors tracking-tighter">CA</span>
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-bold text-lg text-white tracking-wide group-hover:text-[#13C2C2] transition-colors">CIUDAD</span>
+              <span className="font-bold text-lg text-white tracking-wide group-hover:text-[#FFE800] transition-colors">CIUDAD</span>
               <span className="text-[10px] font-bold text-white/50 tracking-[0.3em] uppercase group-hover:text-white transition-colors">Avivamiento</span>
             </div>
           </Link>
@@ -80,9 +79,10 @@ export default function Nav() {
               <Search size={20} />
             </button>
 
+            {/* BOTÓN DAR - COLOR AMARILLO */}
             <Link 
               href="/donar" 
-              className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#13C2C2] text-black font-bold text-sm hover:shadow-[0_0_20px_rgba(19,194,194,0.4)] hover:scale-105 active:scale-95 transition-all duration-300"
+              className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FFE800] text-black font-bold text-sm hover:shadow-[0_0_20px_rgba(255,232,0,0.4)] hover:scale-105 active:scale-95 transition-all duration-300"
             >
               <Heart size={16} className="fill-black/20" />
               <span>Dar</span>
@@ -114,7 +114,7 @@ export default function Nav() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + (i * 0.1) }}
-                    className="block text-4xl font-bold text-white hover:text-[#13C2C2]"
+                    className="block text-4xl font-bold text-white hover:text-[#FFE800]"
                   >
                     {link.name}
                   </motion.span>
@@ -132,7 +132,8 @@ export default function Nav() {
             </nav>
 
             <div className="w-full space-y-6">
-              <Link href="/donar" onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-[#13C2C2] text-black font-bold text-lg">
+              {/* BOTÓN OFRENDAR MÓVIL AMARILLO */}
+              <Link href="/donar" onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-[#FFE800] text-black font-bold text-lg shadow-[0_0_20px_rgba(255,232,0,0.2)]">
                 <Heart size={20} fill="currentColor" /> Ofrendar
               </Link>
               <p className="text-center text-white/30 text-xs uppercase tracking-widest">

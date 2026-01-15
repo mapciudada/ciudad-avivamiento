@@ -22,13 +22,14 @@ export default function Donar() {
 
   return (
     <section id="donar" className="py-24 relative overflow-hidden bg-[#050505]">
-      {/* Luz de fondo turquesa */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-[#13C2C2]/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
+      {/* Luz de fondo AMARILLA */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-[#FFE800]/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10 text-center">
         <Reveal>
           <div className="mb-16">
-            <div className="inline-flex p-3 rounded-2xl bg-[#13C2C2]/10 text-[#13C2C2] mb-6 shadow-[0_0_20px_rgba(19,194,194,0.2)]">
+            {/* Icono de Corazón con GLOW AMARILLO */}
+            <div className="inline-flex p-3 rounded-2xl bg-[#FFE800]/10 text-[#FFE800] mb-6 shadow-[0_0_20px_rgba(255,232,0,0.2)]">
               <Heart size={32} fill="currentColor" />
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Generosidad</h2>
@@ -41,9 +42,11 @@ export default function Donar() {
             {metodos.map((metodo, index) => (
               <div 
                 key={index} 
-                className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#13C2C2]/50 transition-all duration-500 group"
+                // Hover del borde en AMARILLO
+                className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-[#FFE800]/50 transition-all duration-500 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-[#13C2C2] mb-6 group-hover:scale-110 transition-transform">
+                {/* Icono de método en AMARILLO */}
+                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-[#FFE800] mb-6 group-hover:scale-110 transition-transform">
                   {metodo.icon}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4 text-left">{metodo.titulo}</h3>

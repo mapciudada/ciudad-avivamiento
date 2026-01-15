@@ -10,7 +10,8 @@ export default function MultimediaPage() {
         {/* Encabezado Multimedia */}
         <div className="container mx-auto px-4 mb-12 text-center">
           <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4">
-            Nuestros <span className="text-[#13C2C2]">Medios</span>
+            {/* COLOR ACTUALIZADO: Amarillo */}
+            Nuestros <span className="text-[#FFE800]">Medios</span>
           </h1>
           <p className="text-white/50 max-w-2xl mx-auto">
             Revive nuestras últimas prédicas, enseñanzas y momentos especiales de nuestra congregación.
@@ -34,7 +35,8 @@ export default function MultimediaPage() {
               href="https://www.motostorellc.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-white hover:text-[#13C2C2] transition-all duration-300 font-black underline decoration-white/20 underline-offset-4"
+              // COLOR ACTUALIZADO: Hover amarillo y subrayado amarillo
+              className="text-white hover:text-[#FFE800] transition-all duration-300 font-black underline decoration-[#FFE800] underline-offset-4"
             >
               Moto Store LLC
             </a>

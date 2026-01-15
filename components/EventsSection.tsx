@@ -15,15 +15,42 @@ export default function EventsSection() {
         <Reveal>
           <div className="grid md:grid-cols-3 gap-6">
             {eventos.map((evento) => (
-              <article key={evento.id} className="group relative rounded-2xl overflow-hidden bg-[#0f121a] border border-white/10 hover:border-[#13C2C2]/40 transition-all duration-300">
-                <div className="aspect-[4/3] bg-gray-900 relative">
-                  {evento.imagen && <Image src={evento.imagen} alt={evento.titulo} fill className="object-cover" />}
-                  <div className="absolute top-4 right-4 bg-black/60 px-3 py-1 rounded-lg text-xs font-bold border border-white/10">{evento.fecha}</div>
+              <article 
+                key={evento.id} 
+                // Borde HOVER Amarillo
+                className="group relative rounded-2xl overflow-hidden bg-[#0f121a] border border-white/10 hover:border-[#FFE800]/40 transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+              >
+                {/* Imagen del evento */}
+                <div className="aspect-[4/3] bg-gray-900 relative overflow-hidden">
+                  {evento.imagen && (
+                    <Image 
+                      src={evento.imagen} 
+                      alt={evento.titulo} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                    />
+                  )}
+                  {/* Etiqueta de fecha */}
+                  <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold border border-white/10 text-white">
+                    {evento.fecha}
+                  </div>
                 </div>
+
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#13C2C2]">{evento.titulo}</h3>
-                  <p className="text-white/60 text-sm mb-5 line-clamp-2">{evento.descripcion}</p>
-                  <button className="text-sm font-bold flex items-center gap-1">Más detalles <ChevronRight size={16} /></button>
+                  {/* Título HOVER Amarillo */}
+                  <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#FFE800] transition-colors">
+                    {evento.titulo}
+                  </h3>
+                  
+                  <p className="text-white/60 text-sm mb-5 line-clamp-2">
+                    {evento.descripcion}
+                  </p>
+                  
+                  {/* Botón dinámico */}
+                  <button className="text-sm font-bold flex items-center gap-1 text-white group-hover:text-[#FFE800] transition-colors">
+                    Más detalles 
+                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </button>
                 </div>
               </article>
             ))}
