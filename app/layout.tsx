@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Poppins, Pacifico } from "next/font/google";
+import Preloader from "../components/Preloader"; // 👈 1. IMPORTAMOS EL PRELOADER
 
-// Configuración de fuentes (Añadí más pesos para tener negritas bonitas)
+// Configuración de fuentes
 const poppins = Poppins({ 
   subsets: ["latin"], 
   weight: ["300", "400", "600", "700", "800"],
@@ -17,9 +18,9 @@ const pacifico = Pacifico({
   display: "swap"
 });
 
-// ✅ Color del tema para móviles (Barra de estado)
+// ✅ Color del tema para móviles
 export const viewport: Viewport = {
-  themeColor: "#050505", // Cambiado a negro para que la barra del iPhone se fusione con la web
+  themeColor: "#050505", 
   width: "device-width",
   initialScale: 1,
 };
@@ -30,7 +31,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ciudad Avivamiento",
     description: "Una casa para tu fe y tu familia.",
-    // images: ["/og_image_1200x630.png"], // Descomenta cuando tengas la imagen
     type: "website",
     url: "https://ciudadavivamiento.com",
     siteName: "Ciudad Avivamiento",
@@ -40,8 +40,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className="scroll-smooth"> 
-      {/* 👆 'scroll-smooth' es vital para la navegación */}
-      
       <body 
         className={`
           ${poppins.className} 
@@ -52,6 +50,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           overflow-x-hidden
         `}
       >
+        {/* 👈 2. AQUÍ COLOCAMOS LA PANTALLA DE CARGA PARA QUE SALGA PRIMERO */}
+        <Preloader />
+
         {children}
       </body>
     </html>

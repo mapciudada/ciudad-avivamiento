@@ -1,28 +1,28 @@
-import Nav from "../components/Nav";
-import Hero from "../components/Hero";
-import ContactSection from "../components/ContactSection";
-import SocialBar from "../components/SocialBar";
+import Nav from "../../components/Nav";
+import MultimediaSection from "../../components/MultimediaSection";
+import SocialBar from "../../components/SocialBar";
 
-export default function Page() {
+export default function MultimediaPage() {
   return (
     <>
       <Nav />
-      <main className="bg-[#050505] text-white selection:bg-[#13C2C2] selection:text-black">
-        
-        {/* 1. PORTADA (HERO) */}
-        <Hero />
+      <main className="bg-[#050505] min-h-screen pt-28 pb-12">
+        {/* Encabezado Multimedia */}
+        <div className="container mx-auto px-4 mb-12 text-center">
+          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4">
+            Nuestros <span className="text-[#13C2C2]">Medios</span>
+          </h1>
+          <p className="text-white/50 max-w-2xl mx-auto">
+            Revive nuestras últimas prédicas, enseñanzas y momentos especiales de nuestra congregación.
+          </p>
+        </div>
 
-        {/* SECCIÓN DE VIDEO ELIMINADA 
-            Ahora la transmisión vive en su propia página /en-vivo 
-        */}
+        {/* Componente Multimedia */}
+        <MultimediaSection />
 
-        {/* 2. CONTACTO Y REDES */}
-        <ContactSection />
         <SocialBar />
-
       </main>
 
-      {/* FOOTER - PIE DE PÁGINA */}
       <footer className="border-t border-white/10 py-12 bg-black text-center">
         <div className="container mx-auto px-4 space-y-3">
           <p className="text-white text-sm font-bold tracking-wide">

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link"; // 👈 Importante para navegación rápida
 import { motion } from "framer-motion";
 import { ArrowRight, Play, MapPin } from "lucide-react";
 
@@ -8,15 +9,14 @@ export default function Hero() {
       
       {/* --- FONDO CINEMATOGRÁFICO --- */}
       <div className="absolute inset-0 z-0">
-        {/* Imagen de fondo con efecto Parallax suave (scale) */}
+        {/* Imagen de fondo con efecto Parallax suave */}
         <motion.div 
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 10, repeat: Infinity, repeatType: "mirror" }}
           className="relative w-full h-full"
         >
-          {/* Reemplaza '/hero.jpg' con tu foto real. 
-              Si no tienes una, usa una de Unsplash temporalmente para probar */}
+          {/* Asegúrate de que esta imagen exista en public/hero.jpg */}
           <img
             src="/hero.jpg" 
             alt="Adoración en Ciudad Avivamiento"
@@ -39,7 +39,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_#13C2C2]"></span>
+          <span className="w-2 h-2 rounded-full bg-[#13C2C2] animate-pulse shadow-[0_0_10px_#13C2C2]"></span>
           <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-white/80 uppercase">
             Domingos 9:00 AM
           </span>
@@ -56,16 +56,16 @@ export default function Hero() {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/50">
             Ciudad
           </span>{" "}
-          <span className="text-primary relative inline-block">
+          <span className="text-[#13C2C2] relative inline-block">
             Avivamiento
             {/* Subrayado decorativo */}
-            <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+            <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#13C2C2] opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
               <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
             </svg>
           </span>
         </motion.h1>
 
-        {/* Subtítulo Script (Manuscrito) */}
+        {/* Subtítulo Script */}
         <motion.div
           initial={{ opacity: 0, rotate: -3, scale: 0.9 }}
           animate={{ opacity: 1, rotate: -3, scale: 1 }}
@@ -84,35 +84,35 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          {/* Botón Primario (Planificar Visita) */}
-          <a 
-            href="#visitanos" 
-            className="w-full sm:w-auto btn-primary group"
+          {/* Botón Primario -> Va a NOSOTROS */}
+          <Link 
+            href="/nosotros" 
+            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#13C2C2] text-black font-bold text-lg hover:shadow-[0_0_30px_rgba(19,194,194,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group"
           >
-            <MapPin size={20} className="mr-2 group-hover:animate-bounce" />
+            <MapPin size={20} className="group-hover:animate-bounce" />
             Planifica tu visita
-          </a>
+          </Link>
 
-          {/* Botón Secundario (Ver en línea) */}
-          <a 
-            href="#live" 
-            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm"
+          {/* Botón Secundario -> Va a EN VIVO */}
+          <Link 
+            href="/en-vivo" 
+            className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm gap-2"
           >
-            <Play size={20} className="mr-2 fill-current" />
+            <Play size={20} className="fill-current" />
             Ver en línea
-          </a>
+          </Link>
         </motion.div>
       </div>
 
-      {/* Scroll Down Indicator */}
+      {/* Scroll Down Indicator (SOLO FLECHA, SIN TEXTO) */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30"
       >
-        <span className="text-[10px] tracking-widest uppercase">Descubre más</span>
-        <ArrowRight size={20} className="rotate-90 animate-bounce" />
+        {/* Eliminé el <span>Desliza</span> para que quede limpio */}
+        <ArrowRight size={24} className="rotate-90 animate-bounce" />
       </motion.div>
 
     </section>
