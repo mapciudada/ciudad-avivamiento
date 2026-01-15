@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Forzamos el modo oscuro para estilo premium */
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth; /* Desplazamiento suave al dar clic en enlaces */
+  }
+  body {
+    @apply bg-[#050505] text-white antialiased; /* Fondo negro profundo */
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1200px] w-[92%] mx-auto;
+  }
+
+  /* --- CLASES ULTRA PREMIUM --- */
+  
+  /* Botón Principal con brillo neón */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl 
+           bg-[#13C2C2] text-black font-bold tracking-wide 
+           hover:shadow-[0_0_20px_rgba(19,194,194,0.4)] hover:scale-105 
+           active:scale-95 transition-all duration-300;
+  }
+
+  /* Inputs de formulario estilo cristal */
+  .premium-input {
+    @apply w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 
+           text-white placeholder:text-white/30 
+           focus:outline-none focus:ring-2 focus:ring-[#13C2C2]/50 focus:border-[#13C2C2] 
+           transition-all;
+  }
+
+  /* Tarjetas base mejoradas */
+  .card {
+    @apply bg-[#0f121a] border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-colors;
+  }
+
+  /* Texto atenuado */
+  .muted {
+    @apply text-white/50;
+  }
+
+  /* Navegación */
+  .nav-link {
+    @apply px-3 py-2 rounded-md hover:bg-white/5 text-sm font-semibold tracking-wide transition-colors text-white/80 hover:text-white;
+  }
+
+  /* Tipografía Script (si la usas) */
+  .script {
+    font-family: var(--font-script), cursive;
+  }
+}

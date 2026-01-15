@@ -1,0 +1,33 @@
+{
+  "name": "ciudad-avivamiento-welcome-home",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@portabletext/react": "^4.0.3",
+    "@sanity/client": "^7.14.0",
+    "@sanity/image-url": "^1.2.0",
+    "clsx": "^2.1.1",
+    "eslint-config-next": "^16.1.2",
+    "framer-motion": "^12.26.2",
+    "lucide-react": "^0.562.0",
+    "next": "^16.1.2",
+    "next-sanity": "^11.5.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.8",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "10.4.19",
+    "postcss": "8.4.35",
+    "tailwindcss": "3.4.10",
+    "typescript": "^5.9.3"
+  }
+}
