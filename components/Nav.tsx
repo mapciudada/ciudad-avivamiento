@@ -14,13 +14,13 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 👇 LISTA ACTUALIZADA CON "TESTIMONIOS"
+  // 👇 LISTA ACTUALIZADA: Incluye Pastores y la nueva página de Testimonios
   const links = [
     { name: "Inicio", href: "/" },
     { name: "Nosotros", href: "/nosotros" },
-    { name: "Testimonios", href: "/#testimonios" }, // ✅ Agregado aquí
+    { name: "Pastores", href: "/liderazgo" },    // ✅ Nueva página
+    { name: "Testimonios", href: "/testimonios" }, // ✅ Actualizado (sin #)
     { name: "Eventos", href: "/eventos" },
-    { name: "Oraciones", href: "/oraciones" },
     { name: "Multimedia", href: "/multimedia" },
   ];
 

@@ -6,20 +6,18 @@ export default function TestimoniosPage() {
   return (
     <>
       <Nav />
-      <main className="bg-[#050505] min-h-screen pt-28 pb-12">
-        {/* Encabezado de la Página */}
-        <div className="container mx-auto px-4 mb-12 text-center">
-          <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4">
-            Vidas <span className="text-[#FFE800]">Transformadas</span>
-          </h1>
-          <p className="text-white/50 max-w-2xl mx-auto italic">
+      <main className="bg-[#050505] min-h-screen pt-20">
+        
+        {/* Aquí cargamos la sección que ya tiene el título "Vidas Transformadas" */}
+        <TestimonialsSection />
+
+        {/* Versículo Bíblico como cierre elegante (al final) */}
+        <div className="container mx-auto px-4 pb-24 text-center -mt-10 relative z-10">
+          <p className="text-white/40 max-w-2xl mx-auto italic text-lg">
             "Y ellos le han vencido por medio de la sangre del Cordero y de la palabra del testimonio de ellos..." 
-            <span className="block mt-2 font-bold text-white/70">— Apocalipsis 12:11</span>
+            <span className="block mt-3 font-bold text-[#FFE800] text-sm tracking-widest uppercase">— Apocalipsis 12:11</span>
           </p>
         </div>
-
-        {/* Reutilizamos la sección que ya tiene el diseño Pro */}
-        <TestimonialsSection />
 
         <SocialBar />
       </main>
@@ -34,6 +32,7 @@ export default function TestimoniosPage() {
             <a 
               href="https://www.motostorellc.com/" 
               target="_blank" 
+              rel="noopener noreferrer"
               className="text-white hover:text-[#FFE800] transition-all duration-300 font-black underline decoration-[#FFE800] underline-offset-4"
             >
               Moto Store LLC
