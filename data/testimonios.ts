@@ -1,20 +1,22 @@
+// data/testimonios.ts
+
 export const testimonios = [
   {
     id: 1,
-    nombre: "Andrés García",
-    frase: "Llegué buscando respuestas y encontré una familia. Mi fe ha crecido de una manera que nunca imaginé.",
-    rol: "Miembro desde 2023"
+    nombre: "Juan Pérez", // Cambia por el nombre real
+    frase: "Llegué a Ciudad Avivamiento buscando una palabra de esperanza y encontré una familia que me recibió con los brazos abiertos. Mi vida nunca volvió a ser la misma.",
+    rol: "Miembro de la Congregación"
   },
   {
     id: 2,
-    nombre: "María Elena Rivas",
-    frase: "En Ciudad Avivamiento aprendí que Dios no nos llama a ser perfectos, sino a ser reales. Mi hogar fue restaurado.",
-    rol: "Líder de Servicio"
+    nombre: "Familia Rodríguez", 
+    frase: "Nuestros hijos aman venir a la iglesia. Es un lugar donde toda la familia puede crecer en la fe y servir a Dios con alegría.",
+    rol: "Familia de la Casa"
   },
   {
     id: 3,
-    nombre: "Carlos Mendoza",
-    frase: "El apoyo en oración durante mi enfermedad fue clave. No solo oraron, estuvieron conmigo en cada paso.",
-    rol: "Ministerio de Jóvenes"
+    nombre: "Dra. Carmen Luz",
+    frase: "En este ADN diferente entendí que mi profesión también es un ministerio. Gracias por enseñarme a brillar en mi lugar de trabajo.",
+    rol: "Servidora"
   }
 ];
