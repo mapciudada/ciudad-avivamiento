@@ -1,7 +1,11 @@
-import { MapPin, Mail, Phone } from "lucide-react"; // Agregué un par de iconos más para que se vea completo
+"use client";
+import { MapPin, Mail } from "lucide-react"; 
 import Reveal from "./Reveal";
 
 export default function ContactSection() {
+  // ✅ Enlace corregido para la Carrera 27 entre 34 y 35
+  const mapLink = "https://www.google.com/maps/search/?api=1&query=Carrera+27+entre+Calles+34+y+35+Barquisimeto";
+
   return (
     <section id="visitanos" className="py-24 relative overflow-hidden bg-[#050505]">
       {/* Fondo con brillo AMARILLO sutil */}
@@ -39,18 +43,30 @@ export default function ContactSection() {
             {/* Columna Derecha: Información */}
             <div className="space-y-8 lg:border-l border-white/10 lg:pl-12 flex flex-col justify-center">
               
-              <div className="flex items-start gap-5 text-white group">
-                <div className="p-3 rounded-xl bg-[#FFE800]/10 border border-[#FFE800]/20 group-hover:bg-[#FFE800]/20 transition-colors">
-                  <MapPin size={24} className="text-[#FFE800]" />
+              {/* UBICACIÓN CLICKEABLE CORRECTA */}
+              <a 
+                href={mapLink}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start gap-5 text-white group cursor-pointer hover:bg-white/5 p-4 -m-4 rounded-2xl transition-all duration-300"
+                title="Abrir en Google Maps"
+              >
+                <div className="p-3 rounded-xl bg-[#FFE800]/10 border border-[#FFE800]/20 group-hover:bg-[#FFE800] group-hover:text-black transition-colors duration-300">
+                  <MapPin size={24} className="text-[#FFE800] group-hover:text-black transition-colors" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl mb-1">Ubicación</h4>
-                  <p className="text-white/60 leading-relaxed">Carrera 27, entre Calles 14 y 15<br/>Barquisimeto, Venezuela</p>
+                  <h4 className="font-bold text-xl mb-1 group-hover:text-[#FFE800] transition-colors">Ubicación</h4>
+                  <p className="text-white/60 leading-relaxed group-hover:text-white transition-colors">
+                    Carrera 27, entre Calles 34 y 35<br/>Barquisimeto, Venezuela
+                  </p>
+                  <span className="text-xs text-[#FFE800] font-bold mt-2 inline-block opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                    Clic para ver en mapa →
+                  </span>
                 </div>
-              </div>
+              </a>
 
-              {/* Agregué info de contacto extra para rellenar el espacio visualmente */}
-              <div className="flex items-start gap-5 text-white group">
+              {/* CORREO */}
+              <div className="flex items-start gap-5 text-white group p-4 -m-4">
                 <div className="p-3 rounded-xl bg-[#FFE800]/10 border border-[#FFE800]/20 group-hover:bg-[#FFE800]/20 transition-colors">
                   <Mail size={24} className="text-[#FFE800]" />
                 </div>
