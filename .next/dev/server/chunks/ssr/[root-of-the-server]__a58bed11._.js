@@ -80,7 +80,7 @@ const viewport = {
     initialScale: 1
 };
 const metadata = {
-    title: "Ciudad Avivamiento | Tu Casa, Nuestra Casa",
+    title: "Ciudad Avivamiento | Un ADN diferente",
     description: "Una iglesia bíblica, relevante y familiar. Levanta tu fe y transforma tu ciudad.",
     openGraph: {
         title: "Ciudad Avivamiento",

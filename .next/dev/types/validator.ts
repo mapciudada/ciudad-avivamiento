@@ -56,33 +56,6 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../../app/api/instagram/route.ts
-{
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/instagram">> = Specific
-  const handler = {} as typeof import("../../../app/api/instagram/route.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../app/api/revalidate/route.ts
-{
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/revalidate">> = Specific
-  const handler = {} as typeof import("../../../app/api/revalidate/route.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
-// Validate ../../../app/api/youtube/route.ts
-{
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/youtube">> = Specific
-  const handler = {} as typeof import("../../../app/api/youtube/route.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
 // Validate ../../../app/contact/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/contact">> = Specific

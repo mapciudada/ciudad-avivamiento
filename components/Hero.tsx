@@ -73,7 +73,7 @@ export default function Hero() {
           className="mb-10"
         >
           <p className="script text-4xl md:text-6xl text-white/90 drop-shadow-lg">
-            Tu casa, nuestra casa
+            Un ADN diferente. Tu casa, mi casa, nuestra casa
           </p>
         </motion.div>
 
