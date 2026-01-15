@@ -26,11 +26,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Ciudad Avivamiento | Un ADN diferente",
+  title: "Ciudad Avivamiento | Un ADN Diferente",
   description: "Una iglesia bíblica, relevante y familiar. Levanta tu fe y transforma tu ciudad.",
   openGraph: {
     title: "Ciudad Avivamiento",
-    description: "Una casa para tu fe y tu familia.",
+    description: "Una ADN Diferente",
     type: "website",
     url: "https://ciudadavivamiento.com",
     siteName: "Ciudad Avivamiento",
