@@ -5,7 +5,7 @@ export default function SocialBar() {
   const socialLinks = [
     {
       name: "WhatsApp",
-      url: "https://wa.me/584120000000", // ⚠️ CAMBIA ESTO POR EL NÚMERO REAL
+      url: "https://wa.me/584120000000", // ⚠️ Recuerda poner el número real
       icon: <MessageCircle size={24} strokeWidth={1.5} />
     },
     {
@@ -57,7 +57,8 @@ export default function SocialBar() {
     <div className="bg-[#050505] py-16 border-t border-white/5">
       <div className="container mx-auto px-4 flex flex-col items-center">
         
-        <h3 className="text-[10px] font-bold tracking-[0.4em] text-white/30 uppercase mb-10">
+        {/* CAMBIO: Ahora usamos 'text-white' para que se vea claro y nítido */}
+        <h3 className="text-[10px] font-bold tracking-[0.4em] text-white uppercase mb-10">
           SÍGUENOS EN REDES
         </h3>
         
