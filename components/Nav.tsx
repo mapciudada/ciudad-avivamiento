@@ -14,12 +14,12 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Links de navegación (Ajustados a tus secciones)
+  // Links de navegación
   const links = [
     { name: "Inicio", href: "#inicio" },
     { name: "Nosotros", href: "#about" },
     { name: "Eventos", href: "#eventos" },
-    { name: "Mensajes", href: "#medios" }, // Apunta a la nueva sección multimedia
+    { name: "Multimedia", href: "#medios" }, // Apunta a tu nueva sección minimalista
   ];
 
   return (
@@ -29,15 +29,16 @@ export default function Nav() {
           isScrolled ? "py-3" : "py-6"
         }`}
       >
-        <div className="container flex items-center justify-between">
+        <div className="container mx-auto px-4 flex items-center justify-between">
           
-          {/* --- LOGO PREMIUM (CSS Puro - Carga instantánea) --- */}
+          {/* --- LOGO PREMIUM --- */}
           <a href="#" className="relative z-50 flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-white/10 to-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md group-hover:bg-primary/20 group-hover:scale-105 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.2)]">
-              <span className="text-xl font-bold text-white group-hover:text-primary transition-colors">C</span>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-white/10 to-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md group-hover:bg-[#13C2C2]/20 group-hover:scale-105 transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.2)]">
+              {/* Puedes poner tu logo SVG aquí o la inicial */}
+              <span className="text-xl font-bold text-white group-hover:text-[#13C2C2] transition-colors">C</span>
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-bold text-lg text-white tracking-wide group-hover:text-primary transition-colors">CIUDAD</span>
+              <span className="font-bold text-lg text-white tracking-wide group-hover:text-[#13C2C2] transition-colors">CIUDAD</span>
               <span className="text-[10px] font-bold text-white/50 tracking-[0.3em] uppercase group-hover:text-white transition-colors">Avivamiento</span>
             </div>
           </a>
@@ -46,7 +47,7 @@ export default function Nav() {
           <nav 
             className={`hidden lg:flex items-center gap-1 px-2 py-1.5 rounded-full border transition-all duration-500 ${
               isScrolled 
-                ? "bg-black/60 backdrop-blur-xl border-white/10 shadow-2xl translate-y-0" 
+                ? "bg-black/80 backdrop-blur-xl border-white/10 shadow-2xl translate-y-0" 
                 : "bg-white/5 backdrop-blur-sm border-white/5 translate-y-2"
             }`}
           >
@@ -60,7 +61,7 @@ export default function Nav() {
               </a>
             ))}
 
-            {/* Link Especial LIVE con Latido */}
+            {/* Link Live Minimalista */}
             <a 
               href="#live" 
               className="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold text-white bg-white/5 hover:bg-white/10 border border-white/5 transition-all group ml-1"
@@ -80,16 +81,16 @@ export default function Nav() {
               <Search size={20} />
             </button>
 
-            {/* Botón Dar (Resaltado) */}
+            {/* Botón Dar / Ofrendar (Color Oficial) */}
             <a 
               href="#donar" 
-              className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-black font-bold text-sm hover:shadow-[0_0_20px_rgba(19,194,194,0.4)] hover:scale-105 active:scale-95 transition-all duration-300"
+              className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#13C2C2] text-black font-bold text-sm hover:shadow-[0_0_20px_rgba(19,194,194,0.4)] hover:scale-105 active:scale-95 transition-all duration-300"
             >
               <Heart size={16} className="fill-black/20" />
               <span>Dar</span>
             </a>
 
-            {/* Botón Menú Móvil (Hamburguesa) */}
+            {/* Botón Menú Móvil */}
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors lg:hidden"
@@ -100,7 +101,7 @@ export default function Nav() {
         </div>
       </header>
 
-      {/* --- MENÚ MÓVIL (Full Screen Overlay con Animación) --- */}
+      {/* --- MENÚ MÓVIL (Pantalla Completa) --- */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -111,10 +112,10 @@ export default function Nav() {
             className="fixed inset-0 z-40 bg-[#050505] pt-32 pb-10 px-6 flex flex-col items-center justify-between lg:hidden"
           >
             {/* Fondo decorativo */}
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#13C2C2]/10 rounded-full blur-[100px] pointer-events-none" />
 
             {/* Links Móviles */}
-            <nav className="flex flex-col items-center gap-6 w-full relative z-10">
+            <nav className="flex flex-col items-center gap-8 w-full relative z-10">
               {links.map((link, i) => (
                 <motion.a
                   key={link.name}
@@ -123,13 +124,12 @@ export default function Nav() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + (i * 0.1) }}
-                  className="text-4xl font-bold text-white hover:text-primary transition-colors"
+                  className="text-4xl font-bold text-white hover:text-[#13C2C2] transition-colors"
                 >
                   {link.name}
                 </motion.a>
               ))}
               
-              {/* Botón Live Móvil */}
               <motion.a
                 href="#live"
                 onClick={() => setMobileMenuOpen(false)}
@@ -153,7 +153,7 @@ export default function Nav() {
               <a 
                 href="#donar" 
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-primary text-black font-bold text-lg shadow-[0_0_30px_rgba(19,194,194,0.3)]"
+                className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-[#13C2C2] text-black font-bold text-lg shadow-[0_0_30px_rgba(19,194,194,0.3)]"
               >
                 <Heart size={20} fill="currentColor" /> Ofrendar
               </a>
